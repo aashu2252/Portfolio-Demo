@@ -3,65 +3,419 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Developer Portfolio</title>
+    <title>Softappix | High-Performance Web Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
 </head>
 <body>
-    <header>
-        <nav>
-            <h1>John Doe</h1>
-            <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">Softappix</span>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#case-studies">Case Studies</a></li>
+                <li><a href="#tech-stack">Tech Stack</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
             </ul>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
-    <section id="hero">
-        <h2>Web Developer & Designer</h2>
-        <p>Creating modern, responsive, and user-friendly web applications.</p>
-        <a href="#projects" class="btn">View My Work</a>
-    </section>
-
-    <section id="projects">
-        <h2>My Projects</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <img src="https://via.placeholder.com/300x200" alt="Project 1">
-                <h3>Project One</h3>
-                <p>A responsive e-commerce platform built with React and Node.js.</p>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-badge">🚀 Trusted by Growing Businesses</div>
+            <h1 class="hero-headline">
+                Empowering Businesses with 
+                <span class="highlight">High-Performance</span> 
+                Web Solutions
+            </h1>
+            <p class="hero-subheadline">
+                From custom React applications to strategic digital marketing, Softappix helps brands like Alacrity Enterprises scale their digital footprint.
+            </p>
+            <div class="hero-ctas">
+                <a href="#case-studies" class="btn btn-primary">View Our Work</a>
+                <a href="#contact" class="btn btn-secondary">Get a Quote</a>
             </div>
-            <div class="project-card">
-                <img src="https://via.placeholder.com/300x200" alt="Project 2">
-                <h3>Project Two</h3>
-                <p>A task management app with real-time collaboration using Vue.js.</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Projects Delivered</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">30+</span>
+                    <span class="stat-label">Happy Clients</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">99%</span>
+                    <span class="stat-label">Client Satisfaction</span>
+                </div>
             </div>
-            <div class="project-card">
-                <img src="https://via.placeholder.com/300x200" alt="Project 3">
-                <h3>Project Three</h3>
-                <p>A portfolio website with custom animations using GSAP.</p>
+        </div>
+        <div class="hero-visual">
+            <div class="code-window">
+                <div class="window-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                </div>
+                <pre class="code-content"><code><span class="code-keyword">const</span> <span class="code-variable">softappix</span> = {
+  <span class="code-property">mission</span>: <span class="code-string">"empower businesses"</span>,
+  <span class="code-property">stack</span>: [<span class="code-string">"React"</span>, <span class="code-string">"Vite"</span>, <span class="code-string">"AI"</span>],
+  <span class="code-property">result</span>: <span class="code-string">"🚀 growth"</span>
+};</code></pre>
             </div>
         </div>
     </section>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I'm a passionate web developer with 5 years of experience building dynamic and responsive websites. Skilled in JavaScript, React, and Node.js, I love creating seamless user experiences.</p>
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">What We Do</span>
+                <h2 class="section-title">Comprehensive Digital Solutions</h2>
+                <p class="section-subtitle">From concept to deployment, we handle every aspect of your digital transformation</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3 class="service-title">Web Development</h3>
+                    <p class="service-description">Specializing in React, Vite, and modern UI/UX to create lightning-fast, responsive websites that engage users and drive conversions.</p>
+                    <ul class="service-features">
+                        <li>Custom React Applications</li>
+                        <li>Responsive Design</li>
+                        <li>Performance Optimization</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📈</div>
+                    <h3 class="service-title">Digital Strategy</h3>
+                    <p class="service-description">Scaling businesses through targeted marketing and SEO. We help you reach the right audience with the right message.</p>
+                    <ul class="service-features">
+                        <li>SEO Optimization</li>
+                        <li>Content Marketing</li>
+                        <li>Analytics & Insights</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛒</div>
+                    <h3 class="service-title">E-commerce Solutions</h3>
+                    <p class="service-description">Custom integrations for platforms like IndiaMart sellers. Build your online store with seamless payment gateways.</p>
+                    <ul class="service-features">
+                        <li>Custom Storefronts</li>
+                        <li>Payment Integration</li>
+                        <li>Inventory Management</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3 class="service-title">AI Integrations</h3>
+                    <p class="service-description">Implementing intelligent features into existing workflows. Automate processes and enhance user experience with AI.</p>
+                    <ul class="service-features">
+                        <li>Chatbot Development</li>
+                        <li>Process Automation</li>
+                        <li>Smart Analytics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Want to collaborate or discuss a project? Reach out!</p>
-        <p>Email: <a href="mailto:john.doe@example.com">john.doe@example.com</a></p>
-        <p>LinkedIn: <a href="#">John Doe</a></p>
+    <!-- Case Studies Section -->
+    <section class="case-studies" id="case-studies">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Success Stories</span>
+                <h2 class="section-title">Featured Case Studies</h2>
+                <p class="section-subtitle">See how we've helped businesses transform their digital presence</p>
+            </div>
+            <div class="case-studies-grid" id="caseStudiesContainer">
+                <!-- Case studies loaded dynamically from JSON -->
+            </div>
+        </div>
     </section>
 
-    <footer>
-        <p>© 2025 John Doe. All rights reserved.</p>
+    <!-- Tech Stack Section -->
+    <section class="tech-stack" id="tech-stack">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Expertise</span>
+                <h2 class="section-title">Tech Stack</h2>
+                <p class="section-subtitle">Modern tools and technologies we use to build exceptional digital experiences</p>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-category">
+                    <h3 class="tech-category-title">Frontend</h3>
+                    <div class="tech-items">
+                        <div class="tech-item">
+                            <span class="tech-icon">⚛️</span>
+                            <span class="tech-name">React</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-icon">⚡</span>
+                            <span class="tech-name">Vite</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-icon">🎨</span>
+                            <span class="tech-name">Tailwind CSS</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-icon">📱</span>
+                            <span class="tech-name">Responsive Design</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h3 class="tech-category-title">Backend & Tools</h3>
+                    <div class="tech-items">
+                        <div class="tech-item">
+                            <span class="tech-icon">🐍</span>
+                            <span class="tech-name">Python</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-icon">🔥</span>
+                            <span class="tech-name">Firebase</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-icon">📦</span>
+                            <span class="tech-name">Git</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-icon">☁️</span>
+                            <span class="tech-name">Cloud Services</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h3 class="tech-category-title">Specialties</h3>
+                    <div class="tech-items">
+                        <div class="tech-item">
+                            <span class="tech-icon">🚀</span>
+                            <span class="tech-name">Website Optimization</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-icon">🧩</span>
+                            <span class="tech-name">Logic Building</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-icon">🔍</span>
+                            <span class="tech-name">SEO</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-icon">🎯</span>
+                            <span class="tech-name">Performance</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <span class="section-tag">About Softappix</span>
+                    <h2 class="section-title">The Softappix Vision</h2>
+                    <p class="about-description">
+                        At Softappix, we believe in the power of <strong>clean code</strong> and <strong>data-driven marketing</strong>. Our mission is to help local businesses transition to the global digital stage without compromising on quality or performance.
+                    </p>
+                    <p class="about-description">
+                        We specialize in building high-performance web applications that not only look great but also deliver measurable business results. Our approach combines technical excellence with strategic thinking.
+                    </p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <span class="feature-icon">✓</span>
+                            <span>Clean, Maintainable Code</span>
+                        </div>
+                        <div class="about-feature">
+                            <span class="feature-icon">✓</span>
+                            <span>Data-Driven Strategies</span>
+                        </div>
+                        <div class="about-feature">
+                            <span class="feature-icon">✓</span>
+                            <span>Scalable Solutions</span>
+                        </div>
+                        <div class="about-feature">
+                            <span class="feature-icon">✓</span>
+                            <span>Client-First Approach</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="about-card">
+                        <div class="about-card-icon">🎯</div>
+                        <h3>Our Mission</h3>
+                        <p>Empowering businesses with cutting-edge web solutions that drive growth and success.</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="about-card-icon">💡</div>
+                        <h3>Our Approach</h3>
+                        <p>Combining technical expertise with business acumen to deliver results that matter.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Local Roots Section -->
+    <section class="local-roots" id="local-roots">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Differentiator</span>
+                <h2 class="section-title">The Indore Advantage</h2>
+                <p class="section-subtitle">Local expertise meets global standards</p>
+            </div>
+            <div class="local-grid">
+                <div class="local-card">
+                    <div class="local-icon">🏘️</div>
+                    <h3>Local Roots</h3>
+                    <p>Helping Indore-based businesses digitize and reach their full potential. We understand the local market dynamics and tailor solutions accordingly.</p>
+                    <ul class="local-highlights">
+                        <li>Understanding local business needs</li>
+                        <li>Cultural alignment</li>
+                        <li>Regional language support</li>
+                    </ul>
+                </div>
+                <div class="local-divider">
+                    <span>→</span>
+                </div>
+                <div class="local-card">
+                    <div class="local-icon">🌍</div>
+                    <h3>Global Reach</h3>
+                    <p>Applying high-end tech stacks like Vite, React, and AI that compete on a global scale. Our solutions meet international standards.</p>
+                    <ul class="local-highlights">
+                        <li>World-class technology</li>
+                        <li>International best practices</li>
+                        <li>Global market access</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <span class="section-tag">Get In Touch</span>
+                    <h2 class="section-title">Let's Build Something Amazing</h2>
+                    <p class="contact-description">Ready to transform your digital presence? We'd love to hear about your project. Let's discuss how we can help you achieve your goals.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <span>hello@softappix.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <span>Indore, Madhya Pradesh, India</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="projectType">Project Type</label>
+                            <select id="projectType" name="projectType" required>
+                                <option value="" disabled selected>Select project type</option>
+                                <option value="web-development">Web Development</option>
+                                <option value="digital-strategy">Digital Strategy</option>
+                                <option value="ecommerce">E-commerce</option>
+                                <option value="ai-integration">AI Integration</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Project Details</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Tell us about your project..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <span class="logo-icon">⚡</span>
+                        <span class="logo-text">Softappix</span>
+                    </a>
+                    <p class="footer-tagline">Empowering businesses with high-performance web solutions.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="#services">Web Development</a></li>
+                            <li><a href="#services">Digital Strategy</a></li>
+                            <li><a href="#services">E-commerce</a></li>
+                            <li><a href="#services">AI Integrations</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#case-studies">Case Studies</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="#">LinkedIn</a></li>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">Twitter</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Softappix. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
+
