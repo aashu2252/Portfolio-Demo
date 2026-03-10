@@ -194,22 +194,30 @@ function initFormHandling() {
 }
 
 function handleFormSubmit(e) {
-    e.preventDefault();
+    // Let Netlify Forms handle the submission naturally
+    // This will work because we have the 'netlify' attribute on the form
     
-    // Get form data
+    // Get form data for success message
     const formData = new FormData(contactForm);
     const data = Object.fromEntries(formData.entries());
     
     // Validate
     if (!validateForm(data)) {
+        e.preventDefault();
         return;
     }
     
-    // Show success message (in production, this would send to a server)
-    showFormSuccess(data);
+    // Form will submit to Netlify automatically
+    // Show loading state
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
     
-    // Reset form
-    contactForm.reset();
+    // Show success message after a short delay (Netlify will handle redirect)
+    setTimeout(() => {
+        showFormSuccess(data);
+    }, 500);
 }
 
 function validateForm(data) {
