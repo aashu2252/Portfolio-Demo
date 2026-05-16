@@ -136,6 +136,8 @@ const caseStudiesData = {
 // Load Case Studies
 // ============================================
 function loadCaseStudies() {
+    if (!caseStudiesContainer) return;
+    
     try {
         const data = caseStudiesData;
         
@@ -159,23 +161,8 @@ function renderCaseStudies(caseStudies) {
                 <h3 class="case-hook">${study.hook}</h3>
                 <p class="case-company">${study.company}</p>
             </div>
-            <div class="case-body">
-                <div class="case-section">
-                    <h4 class="case-section-title">The Challenge</h4>
-                    <p class="case-section-content">${study.challenge}</p>
-                </div>
-                <div class="case-section">
-                    <h4 class="case-section-title">The Solution</h4>
-                    <p class="case-section-content">${study.solution}</p>
-                </div>
-                <div class="case-section">
-                    <h4 class="case-section-title">Key Feature</h4>
-                    <p class="case-section-content">${study.keyFeature}</p>
-                </div>
-                <div class="case-section">
-                    <h4 class="case-section-title">Outcome</h4>
-                    <p class="case-section-content">${study.outcome}</p>
-                </div>
+            <div class="case-body" style="padding-top: 16px; border-top: 1px solid var(--border-light); margin-top: 16px;">
+                <p class="case-section-content" style="margin-bottom: 24px; color: var(--text-secondary);">${study.outcome}</p>
                 <div class="case-tech">
                     ${study.techUsed.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
                 </div>
@@ -194,30 +181,44 @@ function initFormHandling() {
 }
 
 function handleFormSubmit(e) {
-    // Let Netlify Forms handle the submission naturally
-    // This will work because we have the 'netlify' attribute on the form
+    e.preventDefault();
     
-    // Get form data for success message
     const formData = new FormData(contactForm);
     const data = Object.fromEntries(formData.entries());
     
     // Validate
     if (!validateForm(data)) {
-        e.preventDefault();
         return;
     }
     
-    // Form will submit to Netlify automatically
     // Show loading state
     const submitBtn = contactForm.querySelector('button[type="submit"]');
     const originalText = submitBtn.textContent;
     submitBtn.textContent = 'Sending...';
     submitBtn.disabled = true;
     
-    // Show success message after a short delay (Netlify will handle redirect)
-    setTimeout(() => {
+    // Send to FormSubmit via AJAX
+    fetch("https://formsubmit.co/ajax/softappix@gmail.com", {
+        method: "POST",
+        headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(result => {
         showFormSuccess(data);
-    }, 500);
+        contactForm.reset();
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('There was an error sending your message. Please try again.');
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    });
 }
 
 function validateForm(data) {
